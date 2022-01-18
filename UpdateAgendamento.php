@@ -29,4 +29,4 @@
 	where id_agendamento = '{$id}'";
 	$result_sql = mysqli_query($conn,$sql);
 
-	header("location: PesquisaAgendamento.php");
+	header("location: pesquisaAgendamento.php");

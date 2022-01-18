@@ -21,5 +21,5 @@
 	where id_pacote = '{$_POST['id']}'";
 	$result_sql = mysqli_query($conn,$sql);
 
-	header("location: PesquisaPacote.php");
+	header("location: pesquisaPacote.php");
 ?>

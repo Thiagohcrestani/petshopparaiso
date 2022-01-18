@@ -23,5 +23,5 @@
 	where id_pet = '{$_POST['id']}'";
 	$result_sql = mysqli_query($conn,$sql);
 
-	header("location: PesquisaPet.php");
+	header("location: pesquisaPet.php");
 ?>

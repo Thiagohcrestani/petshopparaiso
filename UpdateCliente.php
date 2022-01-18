@@ -32,5 +32,5 @@
 
 	$result_sql = mysqli_query($conn,$sql);
 
-	header("location: PesquisaCliente.php");
+	header("location: pesquisaCliente.php");
 ?>

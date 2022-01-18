@@ -27,5 +27,5 @@
 
 	$result_sql = mysqli_query($conn,$sql);
 
-	header("location: PesquisaVacina.php");
+	header("location: pesquisaVacina.php");
 ?>
