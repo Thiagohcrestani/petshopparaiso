@@ -13,7 +13,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" color="white" href="Usuario.php">Novo Usuário</a>
-          <a class="dropdown-item" color="white" href="PesquisaUsuario.php">Editar Usuário</a>
+          <a class="dropdown-item" color="white" href="pesquisaUsuario.php">Editar Usuário</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -22,7 +22,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" color="white" href="Cliente.php">Novo Cliente</a>
-          <a class="dropdown-item" color="white" href="PesquisaCliente.php">Editar Cliente</a>
+          <a class="dropdown-item" color="white" href="pesquisaCliente.php">Editar Cliente</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -31,7 +31,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" color="white" href="Pet.php">Novo Pet</a>
-          <a class="dropdown-item" color="white" href="PesquisaPet.php">Editar Pet</a>
+          <a class="dropdown-item" color="white" href="pesquisaPet.php">Editar Pet</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -40,10 +40,10 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" color="white" href="Agendamento.php">Banhos e tosas</a>
-          <a class="dropdown-item" color="white" href="PesquisaAgendamento.php">Editar Agendamento Banhos e tosas</a>
+          <a class="dropdown-item" color="white" href="pesquisaAgendamento.php">Editar Agendamento Banhos e tosas</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" color="white" href="Vacina.php">Vacina</a>
-          <a class="dropdown-item" color="white" href="PesquisaVacina.php">Editar Agendamento Vacina</a>
+          <a class="dropdown-item" color="white" href="pesquisaVacina.php">Editar Agendamento Vacina</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -52,7 +52,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" color="white" href="Pacote.php">Novo Pacote</a>
-          <a class="dropdown-item" color="white" href="PesquisaPacote.php">Editar Pacote</a>
+          <a class="dropdown-item" color="white" href="pesquisaPacote.php">Editar Pacote</a>
         </div>
       </li>
       <span class="navbar-text">
