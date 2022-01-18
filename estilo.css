@@ -1,0 +1,38 @@
+html, body {height:100%;}
+
+.geral {
+    min-height:100%;
+    position:relative;
+    width:px;
+}
+
+.footer {
+    position:relative;
+    bottom:0;
+    width:100%;
+}
+
+.content {overflow:hidden;}
+.aside {width:200px;}
+.fleft {float:left;}
+.fright {float:right;}
+
+.painel{
+
+    background: linear-gradient(to bottom, rgb(199, 198, 198) 0%,rgb(199, 198, 198) 100%);
+    border-radius: 20px;
+    
+    
+    }
+.imagem {
+      background-color: rgb(218, 216, 216);
+      background-size: auto;
+    }
+.alinha {
+    background: #424041;
+    font-size: 25px;
+    border-bottom: 1px solid;
+    text-align: center;
+    }
+
+   
