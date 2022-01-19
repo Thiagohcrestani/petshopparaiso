@@ -14,7 +14,7 @@ if (!verificaSessao()) {
     <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="funcs.js"></script>
     <link href="estilo.css" rel="stylesheet" type="text/css" />
-    <script src="funcoespacote.js"></script>
+    <script src="funcoesPacote.js"></script>
     <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
