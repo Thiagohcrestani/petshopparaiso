@@ -30,15 +30,23 @@ endwhile;
     <script type="text/javascript" src="funcs.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <!-- Bootstrap CSS -->
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- <link href="estilo.css" rel="stylesheet" type="text/css">
  -->
 </head>
+<script>
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+</script>
+
 
 <body>
-<main>
-<div class="container-fluid">
+    <main>
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 col-xl-3 col-md-3 col-sm-3"></div>
                 <div class="col-lg-6 col-xl-6">
@@ -49,12 +57,12 @@ endwhile;
                             <h1 class="display-4 ">Editar Pet</h1>
                         </label>
                         <section>
-                        <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
+                            <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
                             <div class="form-group">
                                 <div class="form-group row">
                                     <label for="nome" class="col-lg-3 col-xl-3 col-md-3 col-sm-3 col-form-label">Nome Pet:</label>
                                     <div class="col-lg-8 col-xl-9 col-md-8 col-sm-8">
-                                        <input type="text" class="form-control" name="nome" id="nome" value="<?php echo $nome ?>"> 
+                                        <input type="text" class="form-control" name="nome" id="nome" value="<?php echo $nome ?>">
                                     </div>
                                 </div>
                             </div>
@@ -72,14 +80,16 @@ endwhile;
                             <div class="form-group row">
                                 <label for="cliente" class="col-sm-3 col-form-label">Dono do Pet</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="cliente" id="cliente">
+                                    <select class="form-control js-example-basic-single" name="cliente" id="cliente">
                                         <?php
                                         $result_clientes = $conn->query("Select * from cadastrocliente order by nome_cliente");
                                         while ($row_result_clientes = mysqli_fetch_assoc($result_clientes)) { ?>
-                                            <option value="<?php echo $row_result_clientes['id_cliente']; ?>" <?php if ($row_result_clientes['id_cliente'] == $cliente){echo " selected ";}?>><?php echo $row_result_clientes['nome_cliente'];?></option>
-                                            
+                                            <option value="<?php echo $row_result_clientes['id_cliente']; ?>" <?php if ($row_result_clientes['id_cliente'] == $cliente) {
+                                                                                                                    echo " selected ";
+                                                                                                                } ?>><?php echo $row_result_clientes['nome_cliente']; ?></option>
+
                                         <?php
-                                       
+
                                         }
                                         ?>
                                     </select>
@@ -88,7 +98,7 @@ endwhile;
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Observações</label>
                                 <div class="col-sm-9">
-                                    <textarea type="text" class="form-control" name="observacoes"  rows="5" cols="33" id="observacoes" value="<?php echo $observacoes ?>"><?php echo $observacoes ?></textarea>
+                                    <textarea type="text" class="form-control" name="observacoes" rows="5" cols="33" id="observacoes" value="<?php echo $observacoes ?>"><?php echo $observacoes ?></textarea>
                                 </div>
                             </div>
 
@@ -104,6 +114,5 @@ endwhile;
     </main>
     </div>
 </body>
- 
 
 </html>

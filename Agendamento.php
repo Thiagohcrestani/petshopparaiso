@@ -29,6 +29,8 @@ mysqli_select_db($conn, $dbname);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="estilo.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 
 
@@ -38,6 +40,11 @@ mysqli_select_db($conn, $dbname);
 
 
 </head>
+<script>
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+</script>
 
 <body class="imagem">
     <?php
@@ -58,7 +65,7 @@ mysqli_select_db($conn, $dbname);
                             <div class="form-group row">
                                 <label for="cliente" class="col-sm-3 col-form-label">Cliente:</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="cliente" id="cliente" onchange="buscarPet(this.value); buscarCliente(this.value)">
+                                    <select class="form-control js-example-basic-single" name="cliente" id="cliente" onchange="buscarPet(this.value); buscarCliente(this.value)">
                                         <option disabled selected>Selecione o Cliente</option>
                                         <?php
                                         $result_clientes = $conn->query("Select c.*,p.id_cliente from cadastrocliente c inner join pacotes p on (c.id_cliente = p.id_cliente) order by nome_cliente");
@@ -128,6 +135,9 @@ mysqli_select_db($conn, $dbname);
 </body>
 <script src="funcoesAgendamento.js"></script>
 <script>
+     $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
     function ValidaCPF() {
         var strCPF = $("#cpf").val();
         var Soma;

@@ -14,7 +14,7 @@ $sql = mysqli_query($conn, "select c.id_pet,c.nome_pet from cadastropet c inner 
 
 // Exibe todos os valores encontrados
 //echo "<table border=1>";
-echo " <select class='form-control' name='pet' id='pet'>";
+echo " <select class='form-control js-example-basic-single' name='pet' id='pet'>";
 
 while ($dados = mysqli_fetch_object($sql)) {
 

@@ -45,6 +45,8 @@ $dateHtml = date("Y-m-d\TH:i:s", strtotime($dataagendamento));
     <link href="style.css" rel="stylesheet" type="text/css" />
     <!-- <link href="estilo.css" rel="stylesheet" type="text/css">
  -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 
 <body class="imagem">
@@ -66,7 +68,7 @@ $dateHtml = date("Y-m-d\TH:i:s", strtotime($dataagendamento));
                                 <label for="cliente" class="col-sm-3 col-form-label">Cliente:</label>
                                 <input class="form-control" type="hidden" name="nomecliente" id="nomecliente">
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="cliente" id="cliente" onchange="buscarPet(this.value); buscarCliente(this.value)">
+                                    <select class="form-control js-example-basic-single" name="cliente" id="cliente" onchange="buscarPet(this.value); buscarCliente(this.value)">
                                         <option disabled selected>Selecione o Cliente</option>
                                         <?php
                                         $result_clientes = $conn->query("Select * from cadastrocliente order by nome_cliente");
@@ -87,7 +89,7 @@ $dateHtml = date("Y-m-d\TH:i:s", strtotime($dataagendamento));
                             <div class="form-group row">
                                 <label for="cliente" class="col-sm-3 col-form-label">Pet:</label>
                                 <div class="col-sm-9" id="resultado">
-                                    <select class="form-control" name="pet" id="pet">
+                                    <select class="form-control js-example-basic-single" name="pet" id="pet">
                                         <option disabled selected>Selecione o Pet</option>
                                         <?php
                                         $result_pet = $conn->query("select * from cadastropet where id_cliente = '$cliente';");
@@ -160,6 +162,9 @@ $dateHtml = date("Y-m-d\TH:i:s", strtotime($dataagendamento));
 </body>
 <script src="funcoesAgendamento.js"></script>
 <script>
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
     function ValidaCPF() {
         var strCPF = $("#cpf").val();
         var Soma;
