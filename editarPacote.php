@@ -14,6 +14,7 @@ while ($result = $sql->fetch_assoc()) :
     $id_cliente = $result['id_cliente'];
     $banhos = $result['banhos_pacote'];
     $valor = $result['valor_pacote'];
+    $telefone = $result['telefone_pacote'];
     $observacoes = $result['observacoes_pacote'];
 endwhile;
 
@@ -86,6 +87,13 @@ endwhile;
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <div class="form-group row">
+                                    <label for="nome" class="col-lg-3 col-xl-3 col-md-3 col-sm-3 col-form-label">Telefone:</label>
+                                    <div class="col-lg-8 col-xl-9 col-md-8 col-sm-8">
+                                        <input type="text" class="form-control telefone" name="telefone" id="telefone" value="<?php echo $telefone ?>">
+                                    </div>
+                                </div>
 
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Itens + /Observações</label>
@@ -107,7 +115,7 @@ endwhile;
 </body>
 <script>
     $(document).ready(function($) {
-        $('.dinheiro').mask('#.##0,00', {
+        $('.dinheiro').mask('#.##0.00', {
             reverse: true,
             symbol: "R$",
             showSymbol: true,

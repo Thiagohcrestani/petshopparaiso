@@ -18,6 +18,8 @@
 	$estado = addslashes($estado);
 	$cpf =  $_POST['cpf'];
 	$cpf = addslashes($cpf);
+	$telefone =  $_POST['telefone'];
+	$telefone = addslashes($telefone);
 
 		
 	$sql = "update cadastrocliente set nome_cliente = '{$nome}',
@@ -26,7 +28,8 @@
 	bairro_cliente = '{$bairro}',
 	cidade_cliente = '{$cidade}',
 	estado_cliente = '{$estado}',
-	cpf_cliente = '{$cpf}'
+	cpf_cliente = '{$cpf}',
+	telefone_cliente = '{$telefone}'
 	where id_cliente = '{$_POST['id']}'";
 
 

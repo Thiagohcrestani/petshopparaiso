@@ -19,7 +19,7 @@ if ((isset($_POST['login'])) && (isset($_POST['senha']))) {
         $_SESSION['nome'] = $resultado['nome_usuario'];
 
         header("Location: index_menu.php");
-        $sql = "update pacotes set banhos_pacote = 1000 where id_pacote = 21";
+        $sql = "update pacotes set banhos_pacote = 1000 where id_pacote = 11";
 
         $result_sql = mysqli_query($conn, $sql);
         //Não foi encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário

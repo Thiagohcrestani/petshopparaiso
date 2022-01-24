@@ -10,6 +10,8 @@
 	$datafim = addslashes($datafim);
 	$valor =  $_POST['valorpacote'];
 	$valor = addslashes($valor);
+	$telefone =  $_POST['telefone'];
+	$telefone = addslashes($telefone);
 	$observacoes =  $_POST['observacoes'];
 	$observacoes = addslashes($observacoes);
 		
@@ -17,6 +19,7 @@
 	$sql = "update pacotes set id_cliente = '{$cliente}',
 	banhos_pacote = '{$banhos}',
 	valor_pacote = '{$valor}',
+	telefone_pacote = '{$telefone}',
 	observacoes_pacote = '{$observacoes}'
 	where id_pacote = '{$_POST['id']}'";
 	$result_sql = mysqli_query($conn,$sql);

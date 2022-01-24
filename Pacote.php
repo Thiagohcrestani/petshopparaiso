@@ -83,7 +83,7 @@ mysqli_select_db($conn, $dbname);
                                     <input type="number" readonly="readonly" class="form-control" name="banhospacote" id="banhospacote" style="text-align:center;" value="4">
                                 </div>
                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
-                                    
+
                                 </div>
                             </div>
                             <div class="form-group">
@@ -91,6 +91,14 @@ mysqli_select_db($conn, $dbname);
                                     <label for="nome" class="col-lg-3 col-xl-3 col-md-3 col-sm-3 col-form-label">Valor Pacote:</label>
                                     <div class="col-lg-8 col-xl-9 col-md-8 col-sm-8">
                                         <input type="text" class="form-control dinheiro" name="valorpacote" id="valorpacote" style="text-align:center;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group row">
+                                    <label for="nome" class="col-lg-3 col-xl-3 col-md-3 col-sm-3 col-form-label">Telefone:</label>
+                                    <div class="col-lg-8 col-xl-9 col-md-8 col-sm-8">
+                                        <input type="text" class="form-control telefone" name="telefone" id="telefone">
                                     </div>
                                 </div>
                             </div>
@@ -115,18 +123,29 @@ mysqli_select_db($conn, $dbname);
 </body>
 <script src="funcoesPacote.js"></script>
 <script>
-    $('.dinheiro').mask('#.##0,00', {
+    $('.dinheiro').mask('#.##0.00', {
         reverse: true
     });
     $("#valorpacote").maskMoney({
         thousands: ".",
-        decimal: ",",
+        decimal: ".",
         symbol: "R$",
         showSymbol: true,
         symbolStay: true
     });
 </script>
 <script>
+    jQuery("input.telefone")
+        .mask("(99) 99999-9999")
+        .focusout(function(event) {
+            var target, phone, element;
+            target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+            phone = target.value.replace(/\D/g, '');
+            element = $(target);
+            element.unmask();
+            element.mask("(99) 99999-9999");
+        });
+
     function ValidaCPF() {
         var strCPF = $("#cpf").val();
         var Soma;

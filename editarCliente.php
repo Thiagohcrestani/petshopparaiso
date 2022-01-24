@@ -18,6 +18,8 @@ while ($result = $sql->fetch_assoc()) :
     $cidade = $result['cidade_cliente'];
     $estado = $result['estado_cliente'];
     $cpf = $result['cpf_cliente'];
+    $telefone = $result['telefone_cliente'];
+
 endwhile;
 
 ?>
@@ -119,6 +121,14 @@ endwhile;
                                 <label for="cpf" class="col-lg-3 col-xl-2 col-md-3 col-sm-1 col-form-label">CPF:</label>
                                 <div class="col-sm-3">
                                     <input type="number" class="form-control" id="cpf" name="cpf" value="<?php echo $cpf ?>" onchange="verificaCpf(); ValidaCPF();">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group row">
+                                    <label for="nome" class="col-lg-3 col-xl-3 col-md-3 col-sm-3 col-form-label">Telefone:</label>
+                                    <div class="col-lg-8 col-xl-9 col-md-8 col-sm-8">
+                                        <input type="text" class="form-control telefone" name="telefone" id="telefone" value="<?php echo $telefone ?>">
+                                    </div>
                                 </div>
                             </div>
 

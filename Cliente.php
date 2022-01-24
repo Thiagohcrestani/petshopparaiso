@@ -10,9 +10,9 @@ if (!verificaSessao()) {
 ?>
 <style>
     .inv {
-    display: none;
-}
- </style>   
+        display: none;
+    }
+</style>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -29,6 +29,7 @@ if (!verificaSessao()) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="estilo.css" rel="stylesheet" type="text/css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 
 
 
@@ -120,9 +121,18 @@ if (!verificaSessao()) {
                                         <option value="EX">Estrangeiro</option>
                                     </select>
                                 </div>
+
                                 <label for="cpf" class="col-lg-3 col-xl-2 col-md-3 col-sm-1 col-form-label">CPF:</label>
                                 <div class="col-sm-3">
                                     <input type="number" class="form-control" id="cpf" name="cpf" onchange="verificaCpf(); ValidaCPF();">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group row">
+                                    <label for="nome" class="col-lg-3 col-xl-3 col-md-3 col-sm-3 col-form-label">Telefone:</label>
+                                    <div class="col-lg-8 col-xl-9 col-md-8 col-sm-8">
+                                        <input type="text" class="form-control telefone" name="telefone" id="telefone">
+                                    </div>
                                 </div>
                             </div>
 
@@ -139,6 +149,17 @@ if (!verificaSessao()) {
 </body>
 <script src="funcoes.js"></script>
 <script>
+    jQuery("input.telefone")
+        .mask("(99) 99999-999?9")
+        .focusout(function(event) {
+            var target, phone, element;
+            target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+            phone = target.value.replace(/\D/g, '');
+            element = $(target);
+            element.unmask();
+            element.mask("(99) 99999-999?9");
+        });
+
     function ValidaCPF() {
         var strCPF = $("#cpf").val();
         var Soma;

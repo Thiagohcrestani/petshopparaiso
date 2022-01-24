@@ -107,7 +107,7 @@ if (!verificaSessao()) {
         </div>
     </main>
 </body>
-<script src="funcoesvacina.js"></script>
+<script src="funcoesVacina.js"></script>
 <script>
     function ValidaCPF() {
         var strCPF = $("#cpf").val();
