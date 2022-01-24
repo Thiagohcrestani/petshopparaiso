@@ -16,8 +16,8 @@ $sql = mysqli_query($conn,"SELECT id_usuario, nome_usuario FROM cadastrousuario 
 echo"<div class='row'>";
 while ($dados = mysqli_fetch_object($sql)) {
 	
-	echo "<div style='margin-top:8px; border-bottom-style:solid; border-bottom-width: 1px;' class='col-lg-9 col-md-9 col-sm-9 col-xs-9'><font color=black><b>" . $dados->nome_usuario . "</b></font></div>";
-	echo "<div style='margin-top:2px' class='col-lg-3 col-md-3 col-sm-3 col-xs-3'>".
+	echo "<div style='margin-top:8px; border-bottom-style:solid; border-bottom-width: 1px;' class='col-lg-8 col-md-8 col-sm-8 col-xs-8'><font color=black><b>" . $dados->nome_usuario . "</b></font></div>";
+	echo "<div style='margin-top:2px' class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>".
 		"<button class='btn btn-sm btn-warning' onclick='exibirConteudo(".$dados->id_usuario.")'>Editar</button>".
 		"&nbsp;&nbsp;<button class='btn btn-danger btn-sm' onclick = 'confirmar(".$dados->id_usuario.")'> Excluir </button></div>";
 
